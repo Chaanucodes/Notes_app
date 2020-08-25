@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/layoutAboutAlert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transp_color">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+
+    android:background="@color/transp_color">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/aboutAnimView"
+        android:layout_width="340dp"
+        android:layout_height="240dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:lottie_rawRes="@raw/about_anim"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/fullCredText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutAnimView"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/original_surfer"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/full_cred"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/okayButton"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullCredText"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back_to_app"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/creditTextAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/credits"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/okayButton"
+        android:textSize="16sp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/versionTextAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/capriola"
+        android:layout_below="@id/creditTextAbout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/custom_version" />
+
+
+</RelativeLayout>
+    </LinearLayout>
+</layout>

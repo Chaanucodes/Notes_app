@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Your Notes</string>
+
+    <string name="done">done</string>
+    <string name="about">About</string>
+    <string name="clear">Delete all</string>
+    <string name="credits">Made by Pratikshit</string>
+    <string name="full_cred">This is a simple app that required a lot of time and brainstorming.
+        I know you have a better app to do what this app does but just look around here a bit. Thanks.</string>
+    <string name="custom_version">v0.9b</string>
+    <string name="title_main">Your Notes</string>
+    <string name="back_to_app">Back to app</string>
+    <string name="title_hint">Title</string>
+    <string name="subtitle_hint">Subtitle</string>
+    <string name="text_hint">Text</string>
+    <string name="contact_us_send_text">Have a feedback? Something you think you wanna mention or suggestion or anything at all?
+        Feel free to send us an email by clicking on the flying email below</string>
+    <string name="warning_delete_data">Are you sure you want to delete all your data?</string>
+    <string name="yes_delete">Yes, delete!</string>
+    <string name="no_delete">I changed my mind</string>
+    <string name="channel_name">Note Reminder</string>
+    <string name="channel_description">A daily reminder to write a note</string>
+    <string name="get_started">To app</string>
+    <string name="prev">Prev</string>
+</resources>

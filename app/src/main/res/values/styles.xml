@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="CustomAmber" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">#E65100</item>
+        <item name="colorPrimaryDark">#FB8C00</item>
+        <item name="colorAccent">#FFB300</item>
+
+    </style>
+
+    <style name="Custom_Edit_Texts" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:ems">10</item>
+    </style>
+
+</resources>

@@ -1,0 +1,19 @@
+package com.example.amotion.editing
+
+import android.app.Application
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.amotion.database.NotesDatabaseDao
+
+class EditNoteViewModelFactory(
+    private val dataSource : NotesDatabaseDao,
+    private val application: Application
+) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(EditNoteViewModel::class.java)) {
+            return EditNoteViewModel(dataSource, application) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+
+}

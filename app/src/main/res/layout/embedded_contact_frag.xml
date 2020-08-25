@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutContactAlert"
+        android:background="@color/transp_color">
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transp_color"
+    android:paddingStart="4dp"
+
+    android:paddingEnd="4dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/contact_us_full_text"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/original_surfer"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_above="@id/lottieSendAnimView"
+        android:text="@string/contact_us_send_text"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieSendAnimView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        app:lottie_rawRes="@raw/send_email"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/okayButton"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lottieSendAnimView"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FFC107"
+        android:text="@string/back_to_app"/>
+
+</RelativeLayout>
+    </LinearLayout>
+</layout>

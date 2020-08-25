@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="note"
+            type="com.example.amotion.database.MyNotes" />
+
+        <variable
+            name="clickListener"
+            type="com.example.amotion.notes.MyNotesListener" />
+
+        <variable
+            name="deleteListener"
+            type="com.example.amotion.notes.MyNotesListener" />
+
+        <variable
+            name="shareListener"
+            type="com.example.amotion.notes.MyNotesListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_list_item"
+        android:orientation="horizontal"
+        android:paddingStart="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:onClick="@{() -> clickListener.onClick(note)}"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textTitleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="serif"
+                android:maxLines="1"
+                android:outlineProvider="bounds"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:titleText="@{note}"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/textContentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                app:contentText="@{note}"
+                tools:text="Content is here" />
+
+            <TextView
+                android:id="@+id/textTimeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_list_item"
+                android:fontFamily="monospace"
+                android:maxLines="1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#616161"
+                app:timeText="@{note}"
+                tools:text="Thursday 9128 123 na" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/darkBackgroundColor"
+                android:onClick="@{() -> deleteListener.onClick(note)}"
+                android:src="@drawable/ic_delete_forever_black_24dp" />
+
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/darkBackgroundColor"
+                android:onClick="@{() -> shareListener.onClick(note)}"
+                android:src="@drawable/ic_baseline_share_24" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

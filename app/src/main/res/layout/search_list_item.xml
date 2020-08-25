@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="searchQuery"
+            type="com.example.amotion.database.MyNotes" />
+
+        <variable
+            name="clickListener"
+            type="com.example.amotion.notes.MyNotesListener" />
+
+        <variable
+            name="searchKey"
+            type="String" />
+    </data>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_list_item_bg"
+        android:orientation="vertical"
+        android:onClick="@{() -> clickListener.onClick(searchQuery)}"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:titleText="@{searchQuery}"/>
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:maxLines="1"
+            app:resultText="@{searchKey}"
+            app:resultData="@{searchQuery}"/>
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            app:timeText="@{searchQuery}"/>
+
+    </LinearLayout>
+</layout>

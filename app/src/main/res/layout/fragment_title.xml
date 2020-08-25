@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="noteData"
+            type="com.example.amotion.notes.TitleFragViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageButton
+                android:id="@+id/exitAppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transp_color"
+                android:src="@drawable/ic_exit_to_app_black_24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="top|center"
+                android:backgroundTint="@color/black"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/title_main"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="?attr/colorControlNormal"
+                android:textStyle="bold" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieSearch"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                app:lottie_rawRes="@raw/searchanim"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+
+        </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:animateLayoutChanges="true"
+        tools:context=".notes.TitleFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/transp_color"
+            app:fabAlignmentMode="end"
+            app:fabCradleMargin="8dp"
+            app:hideOnScroll="true"
+            app:fabCradleRoundedCornerRadius="20dp"
+            app:menu="@menu/custom_button_menu" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/bottomAppBar"
+            app:borderWidth="0dp"
+            app:rippleColor="@color/colorAccent"
+            android:backgroundTint="@color/weak_transp_color"
+            app:tint="@color/colorPrimary"
+            app:elevation="0dp"
+            android:onClick="@{() -> noteData.navigateForNewNote()}"
+            android:src="@drawable/ic_adding_bg"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>
